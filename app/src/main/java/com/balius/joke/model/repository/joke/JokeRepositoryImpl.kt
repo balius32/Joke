@@ -30,5 +30,17 @@ class JokeRepositoryImpl(
 
     }
 
+    override suspend fun getSaveJoke(): List<SavedJoke>
+    {
+        val saveList : List<SavedJoke> = db.dao().getJoke()
+
+        return saveList
+    }
+
+    override suspend fun deleteJoke(joke : String): Boolean {
+      db.dao().deleteJoke(joke)
+        return true
+    }
+
 
 }

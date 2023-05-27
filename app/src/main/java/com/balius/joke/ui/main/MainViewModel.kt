@@ -21,7 +21,7 @@ class MainViewModel(
     val joke: LiveData<String>
         get() = _joke
 
-    private val _saveJoke= MutableLiveData<Boolean>()
+    private val _saveJoke = MutableLiveData<Boolean>()
     val saveJoke: LiveData<Boolean>
         get() = _saveJoke
 
@@ -48,12 +48,11 @@ class MainViewModel(
     }
 
 
-    fun saveJoke(joke : String) {
+    fun saveJoke(joke: String) {
 
         viewModelScope.launch {
 
             try {
-
                 val result = withContext(Dispatchers.IO) {
 
                     val save: Boolean = jokeRepository.saveJoke(joke)
@@ -71,5 +70,23 @@ class MainViewModel(
         }
     }
 
+
+    fun deleteJoke(joke: String) {
+
+        viewModelScope.launch {
+
+            try {
+                val result = withContext(Dispatchers.IO) {
+
+                    jokeRepository.deleteJoke(joke)
+
+                }
+
+            } catch (e: java.lang.Exception) {
+
+                Log.e("error", "delete joke error")
+            }
+        }
+    }
 
 }
