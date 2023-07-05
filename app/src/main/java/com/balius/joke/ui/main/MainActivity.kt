@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSave.setOnClickListener {
 
-            if (binding.txtJoke.text.toString() != "first time click the button !!"){
+            if (binding.txtJoke.text.toString() != "first time click the button !!") {
                 if (isIcon1Visible) {
                     viewModel.saveJoke(binding.txtJoke.text.toString())
                     isIcon1Visible = !isIcon1Visible
@@ -56,10 +56,7 @@ class MainActivity : AppCompatActivity() {
                     isIcon1Visible = !isIcon1Visible
                     setIcon()
                 }
-
             }
-
-
 
         }
 
@@ -92,8 +89,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-
     }
 
 

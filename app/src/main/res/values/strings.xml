@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Joke</string>
+    <string name="app_name">Joker</string>
 
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
